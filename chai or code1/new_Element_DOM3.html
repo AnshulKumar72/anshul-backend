@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body style="background-color: #212121; color:#fff">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+   /*
+    //Function to add new element in list
+    function addLanguage(langName){
+        const li=document.createElement('li');
+        li.innerHTML=`${langName}`
+        document.querySelector('.language').
+        appendChild(li)
+    }
+    //it is not efficient method to add item because it travse all the list 
+    addLanguage("Python")
+    addLanguage("C++")
+    addLanguage("Ruby")
+    addLanguage("Java")
+    */
+
+
+    //====It is optimize way=====
+    function addLanguage(langName){
+        const li=document.createElement('li')
+        li.append(document.createTextNode(langName))
+        document.querySelector('.language').append(li)
+    }
+    addLanguage("Java")
+    addLanguage("Python")
+
+    // Edit 
+    /*
+    //-----this is change the second value of the addLanguage-----
+    const secondLang=document.querySelector("li:nth-child(2)")
+    //secondLang.innerHTML="Pyhton"
+    const newli=document.createElement('li')
+    newli.textContent="go lang"
+    secondLang.replaceWith(newli)
+    */
+
+    //Edit
+    const firstLang=document.querySelector("li:first-child");
+    firstLang.outerHTML='<li>TypeScript</li>'
+
+    //remove element from li
+
+    //const lastLang=document.querySelector('li:last-child')
+    //lastLang.remove()
+    
+</script>
+</html>
